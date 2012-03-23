@@ -1,0 +1,23 @@
+Arrayr
+======
+
+Module to use for letting attributes automatically return arrays for 
+comma separated values
+
+Specify which attributes that should return array as values
+and access the value by suffixing the attribute with "_multiple"
+
+If a getter and setter doens't exists this module will create them for you.
+
+Example 
+-------
+
+  class Foo
+    include Arrayr
+    attr_arrayr(:bar)
+  end
+  
+  foo = Foo.new
+  foo.bar = "zoo, zum"
+  foo.bar_to_a  => ["zoo", "zum"]
+     
